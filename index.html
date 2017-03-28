@@ -2,12 +2,12 @@
 <html>
 <head>
 	<title>Kyle Sigman Assn #1</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment1.css">
-	<script src="js/Assignment1.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment2.css">
+	<script src="js/Assignment2.js"></script>
 </head>
 <body>
 	<header>
-		<h1>Assn #5 Kyle Sigman</h1>
+		<h1>Assn #2 Kyle Sigman</h1>
 	</header>
 	<hr>
 	<div>
@@ -16,15 +16,25 @@
 			<option value="null">--</option>
 			<option value="section1">Menu 1</option>
 			<option value="section2">Menu 2</option>
+			<option value="section3">Menu 3</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
-	<h2>Section 1</h2>
-	<img src="images/default_uab_fb_image-600.jpg" alt="UAB">
+	<h2>Customer List</h2>
+	<p id="error"></p>
 	</section>
 	<section id="section2" class="body-section-2">
-	<h2>Section 2</h2>
-		<p>There is text in this section</p>
+	<h2>Order History</h2>
+		<label>Customer ID:</label>
+		<input type="text" id="customer_id">
+		<br>
+		<button onclick="orderRetrive()">Get List</button>
+		<p id="error1"></p>
+		<button onclick="backButton(1)">Back</button>
+	</section>
+	<section id="section3" class="body-section-1">
+	<h2>About</h2>
+		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>
 	<footer>
 		<p>Kyle Sigman, sigmankm@uab.edu</p>
