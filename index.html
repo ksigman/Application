@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kyle Sigman Assn #1</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment2.css">
-	<script src="js/Assignment2.js"></script>
+	<title>Kyle Sigman Assn #3</title>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment3.css">
+	<script src="js/Assignment3.js"></script>
 </head>
 <body>
 	<header>
-		<h1>Assn #2 Kyle Sigman</h1>
+		<h1>Assn #3 Kyle Sigman</h1>
 	</header>
 	<hr>
 	<div>
 		<h2>Menu</h2>
 		<select id="menu_select" onchange="sectionSelect()">
 			<option value="null">--</option>
-			<option value="section1">Menu 1</option>
-			<option value="section2">Menu 2</option>
-			<option value="section3">Menu 3</option>
+			<option value="section1">Customer List</option>
+			<option value="section2">Order History</option>
+			<option value="section3">Order Edit</option>
+			<option value="section4">About</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
-	<h2>Customer List</h2>
+	<h2>Customer Orders</h2>
 	<p id="error"></p>
 	</section>
 	<section id="section2" class="body-section-2">
@@ -28,11 +29,32 @@
 		<label>Customer ID:</label>
 		<input type="text" id="customer_id">
 		<br>
-		<button onclick="orderRetrive()">Get List</button>
+		<button onclick="orderList()">Get List</button>
 		<p id="error1"></p>
 		<button onclick="backButton(1)">Back</button>
 	</section>
 	<section id="section3" class="body-section-1">
+		<h2>Order Edit</h2>
+
+		<label>Order ID:</label>
+		<input type="text" id="order_id1" disabled>
+		<br>
+		<label>Shiping Address:</label>
+		<input type="text" id="order_address">
+		<br>
+		<label>City:</label>
+		<input type="text" id="order_city">
+		<br>
+		<label>Name:</label>
+		<input type="text" id="order_name">
+		<br>
+		<label>Postal Code:</label>
+		<input type="text" id="order_postal">
+		<br>
+		<button onclick="orderEdit()">Edit</button>
+		<p id="error2"></p>
+	</section>
+	<section id="section4" class="body-section-2">
 	<h2>About</h2>
 		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>
