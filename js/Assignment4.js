@@ -161,7 +161,7 @@ function customerAdd(){
       if(objRequest.readyState == 4 && objRequest.status == 200){
 
          var result = JSON.parse(objRequest.responseText);
-         if(result == 1){
+         if(result.WasSuccessful == 1){
             document.getElementById("error3").innerHTML = "New customer added";
             setTimeout(function(){
                
@@ -187,14 +187,13 @@ function customerRemove(customer_id){
    url += customer_id;
    objRequest.onreadystatechange = function(){
       if(objRequest.readyState == 4 && objRequest.status == 200){
+      var result = JSON.parse(objRequest.responseText);
+      if(result.DeleteCustomerResult.WasSuccessful)
+         alert("Customer Removed Succesfully");
          backButton(1); 
-      }
-      else{
-         document.getElementById("error2").innerHTML = "there has been an issue, please check the spelling of the input";
       }
    }
    objRequest.open("GET", url, true);
    objRequest.send();
-   
    }
 }
