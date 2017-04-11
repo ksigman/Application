@@ -5,9 +5,9 @@
  versionCode = "1"
  version = "0.1.0" >
  <!-- versionCode is optional and Android only -->
- <name> Assignment 3</name>
+ <name> Assignment 4</name>
  <description>
- Assignment 3
+ Assignment 4
  </description>
  <author>
  Kyle Sigman

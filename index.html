@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kyle Sigman Assn #3</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment3.css">
-	<script src="js/Assignment3.js"></script>
+	<title>Kyle Sigman Assn #4</title>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment4.css">
+	<script src="js/Assignment4.js"></script>
 </head>
 <body>
 	<header>
@@ -17,12 +17,14 @@
 			<option value="section1">Customer List</option>
 			<option value="section2">Order History</option>
 			<option value="section3">Order Edit</option>
-			<option value="section4">About</option>
+			<option value="section4">Customer Add</option>
+			<option value="section5">About</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
 	<h2>Customer Orders</h2>
-	<p id="error"></p>
+		<p id="error"></p>
+		<button onclick="backButton(4)">Add Customer</button>
 	</section>
 	<section id="section2" class="body-section-2">
 	<h2>Order History</h2>
@@ -54,7 +56,22 @@
 		<button onclick="orderEdit()">Edit</button>
 		<p id="error2"></p>
 	</section>
-	<section id="section4" class="body-section-2">
+	<section id="section4" class="body-section-1">
+		<h2>Customer Add</h2>
+
+		<label>Customer ID:</label>
+		<input type="text" id="customer_id1">
+		<br>
+		<label>Customer Name:</label>
+		<input type="text" id="customer_name">
+		<br>
+		<label>City:</label>
+		<input type="text" id="customer_city">
+		<br>
+		<button onclick="customerAdd()">Add</button>
+		<p id="error3"></p>
+	</section>
+	<section id="section5" class="body-section-2">
 	<h2>About</h2>
 		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>

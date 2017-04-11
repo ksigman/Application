@@ -1,36 +1,44 @@
 function sectionSelect(){
    var selectBox = document.getElementById("menu_select");
    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-   if(selectedValue == "section1"){
+   switch(selectedValue){
+   case "section1":
       document.getElementById("section1").style.display= "inline-block";
       document.getElementById("section2").style.display = "none";
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "none";
+      document.getElementById("section5").style.display = "none";
       customerListRetrive();
-      return;
-   }
-   else if(selectedValue == "section2"){
+      break;
+   case "section2":
       document.getElementById("section1").style.display = "none";
       document.getElementById("section2").style.display = "inline-block";
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "none";
-      return;
-   }
-   else if(selectedValue == "section3"){
+      document.getElementById("section5").style.display = "none";
+      break;
+   case "section3":
       document.getElementById("section1").style.display = "none";
       document.getElementById("section2").style.display = "none";
       document.getElementById("section3").style.display = "inline-block";
       document.getElementById("section4").style.display = "none";
-      return;
-   }
-   else if(selectedValue == "section4"){
+      document.getElementById("section5").style.display = "none";
+      break;
+   case "section4":
       document.getElementById("section1").style.display = "none";
       document.getElementById("section2").style.display = "none";
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "inline-block";
-      return;
-   }
-   else{
+      document.getElementById("section5").style.display = "none";
+      break;
+   case "section5":
+      document.getElementById("section1").style.display = "none";
+      document.getElementById("section2").style.display = "none";
+      document.getElementById("section3").style.display = "none";
+      document.getElementById("section4").style.display = "none";
+      document.getElementById("section5").style.display = "inline-block";
+      break;
+   default:
       return;
    }
 }
@@ -44,9 +52,9 @@ function customerListRetrive() {
 
          var result = JSON.parse(objRequest.responseText);
 
-         to_print = "<h1>Result</h1><br/>\n<table>\n<tr><th>Customer ID</th><th>Company Name</th><th>City</th><th></th></tr>\n"
+         to_print = "<h1>Result</h1><br/>\n<table>\n<tr><th>Customer ID</th><th>Company Name</th><th>City</th><th></th><th></th></tr>\n"
          for (var i = 0; i < result.GetAllCustomersResult.length; i++) {
-            to_print += "<tr><td>"+result.GetAllCustomersResult[i].CustomerID+"</td><td>"+result.GetAllCustomersResult[i].CompanyName+"</td><td>"+result.GetAllCustomersResult[i].City+"</td><td><button onclick=\"orderList('"+result.GetAllCustomersResult[i].CustomerID+"')\">Orders</button></td></tr>\n"
+            to_print += "<tr><td>"+result.GetAllCustomersResult[i].CustomerID+"</td><td>"+result.GetAllCustomersResult[i].CompanyName+"</td><td>"+result.GetAllCustomersResult[i].City+"</td><td><button onclick=\"orderList('"+result.GetAllCustomersResult[i].CustomerID+"')\">Orders</button></td><td><button onclick=\"customerRemove('"+result.GetAllCustomersResult[i].CustomerID+"')\">Remove</button></td></tr>\n"
          }
          to_print += "</table>";
          document.getElementById("error").innerHTML = to_print;
@@ -142,4 +150,51 @@ function backButton(index) {
    var sel = document.getElementById('menu_select');
    sel.selectedIndex = index;
    sectionSelect();
+}
+function customerAdd(){
+   var objRequest = new XMLHttpRequest();
+   var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/CreateCustomer"
+   var customer;
+   var customer_to_add = document.getElementById("customer_id1").value;
+   customer = '{"CustomerID":"'+ customer_to_add + '","CompanyName":"' + document.getElementById("customer_name").value +'","City":"'+ document.getElementById("customer_city").value +'"}';
+   objRequest.onreadystatechange = function(){
+      if(objRequest.readyState == 4 && objRequest.status == 200){
+
+         var result = JSON.parse(objRequest.responseText);
+         if(result == 1){
+            document.getElementById("error3").innerHTML = "New customer added";
+            setTimeout(function(){
+               
+               backButton(1);
+            }, 2000);
+         }
+         else{
+            document.getElementById("error3").innerHTML = "Customer add was unsuccessful";
+         }
+      }
+   }
+
+    objRequest.open("POST", url, true);
+    objRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    objRequest.send(customer);
+
+}
+function customerRemove(customer_id){
+   var r = confirm("Remove this customer?");
+   if (r == true) {
+   var objRequest = new XMLHttpRequest();
+   var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/DeleteCustomer/"
+   url += customer_id;
+   objRequest.onreadystatechange = function(){
+      if(objRequest.readyState == 4 && objRequest.status == 200){
+         backButton(1); 
+      }
+      else{
+         document.getElementById("error2").innerHTML = "there has been an issue, please check the spelling of the input";
+      }
+   }
+   objRequest.open("GET", url, true);
+   objRequest.send();
+   
+   }
 }
