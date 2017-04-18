@@ -19,5 +19,5 @@
  <plugin name="cordova-plugin-geolocation" source="npm" />
  <plugin name="cordova-plugin-splashscreen" source="npm" />
  <icon src="icon.png" />
- <splash src="spash.png"/>
+ <splash src="splash.png"/>
 </widget>
