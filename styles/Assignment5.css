@@ -56,9 +56,25 @@ select{
 	background-color: #004a96;
 	color: #fff;
 }
+#section5{
+	width: 100%;
+	display: none;
+	background-color: #004a96;
+	color: #fff;
+}
+#section6{
+	width: 100%;
+	display: none;
+	background-color: #004a96;
+	color: #fff;
+}
 #image1{
 	width: 25%;
 	height: 25%;
 	float: right;
 	padding: 5px;
+}
+#map{
+	height: 400px;
+    width: 100%;
 }

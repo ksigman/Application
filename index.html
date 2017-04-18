@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kyle Sigman Assn #4</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment4.css">
-	<script src="js/Assignment4.js"></script>
+	<title>Kyle Sigman Assn #5</title>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment5.css">
+	<script src="js/Assignment5.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAzPngfOo3KLUCN-55xfzVgLo2xxBrHAU"></script>
 </head>
 <body>
 	<header>
-		<h1>Assn #3 Kyle Sigman</h1>
+		<h1>Assn #5 Kyle Sigman</h1>
 	</header>
 	<hr>
 	<div>
@@ -18,7 +19,8 @@
 			<option value="section2">Order History</option>
 			<option value="section3">Order Edit</option>
 			<option value="section4">Customer Add</option>
-			<option value="section5">About</option>
+			<option value="section5">Geolocation</option>
+			<option value="section6">About</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
@@ -72,6 +74,13 @@
 		<p id="error3"></p>
 	</section>
 	<section id="section5" class="body-section-2">
+	<h2>Map</h2>
+		<button onclick="geolocate()">Find Current Location</button><br>
+		<label>Latitude: </label><label id="latitude">Latitude Result</label><br>
+		<label>Longitude: </label><label id="longitude">Longitude Result</label>
+		<div id="map"></div>
+	</section>
+	<section id="section6" class="body-section-2">
 	<h2>About</h2>
 		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>

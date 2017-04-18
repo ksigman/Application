@@ -5,9 +5,9 @@
  versionCode = "1"
  version = "0.1.0" >
  <!-- versionCode is optional and Android only -->
- <name> Assignment 4</name>
+ <name> Assignment 5</name>
  <description>
- Assignment 4
+ Assignment 5
  </description>
  <author>
  Kyle Sigman
@@ -16,4 +16,8 @@
  <preference name="phonegap-version" value="cli-6.3.0" />
  <plugin name="cordova-plugin-whitelist" source="npm" />
  <access origin="*" />
+ <plugin name="cordova-plugin-geolocation" spec="npm" />
+ <plugin name="cordova-plugin-splashscreen" spec="npm" />
+ <icon src="icon.png" />
+ <splash src="images/spash.png"/>
 </widget>

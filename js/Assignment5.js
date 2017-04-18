@@ -16,6 +16,7 @@ function sectionSelect(){
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "none";
       document.getElementById("section5").style.display = "none";
+      document.getElementById("section6").style.display = "none";
       break;
    case "section3":
       document.getElementById("section1").style.display = "none";
@@ -23,6 +24,7 @@ function sectionSelect(){
       document.getElementById("section3").style.display = "inline-block";
       document.getElementById("section4").style.display = "none";
       document.getElementById("section5").style.display = "none";
+      document.getElementById("section6").style.display = "none";
       break;
    case "section4":
       document.getElementById("section1").style.display = "none";
@@ -30,6 +32,7 @@ function sectionSelect(){
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "inline-block";
       document.getElementById("section5").style.display = "none";
+      document.getElementById("section6").style.display = "none";
       break;
    case "section5":
       document.getElementById("section1").style.display = "none";
@@ -37,6 +40,15 @@ function sectionSelect(){
       document.getElementById("section3").style.display = "none";
       document.getElementById("section4").style.display = "none";
       document.getElementById("section5").style.display = "inline-block";
+      document.getElementById("section6").style.display = "none";
+      break;
+   case "section6":
+      document.getElementById("section1").style.display = "none";
+      document.getElementById("section2").style.display = "none";
+      document.getElementById("section3").style.display = "none";
+      document.getElementById("section4").style.display = "none";
+      document.getElementById("section5").style.display = "none";
+      document.getElementById("section6").style.display = "inline-block";
       break;
    default:
       return;
@@ -196,4 +208,29 @@ function customerRemove(customer_id){
    objRequest.open("GET", url, true);
    objRequest.send();
    }
+}
+function geolocate(){
+   var geo = navigator.geolocation;
+
+   if(geo){
+      geo.getCurrentPosition(showPosition); 
+   }
+   else{
+      alert("Geolocation is not supported");
+   }
+}
+function showPosition(position){
+   var latitude = position.coords.latitude;
+   var longitude = position.coords.longitude;
+   document.getElementById("latitude").innerHTML = latitude;
+   document.getElementById("longitude").innerHTML = longitude;
+   var uluru = {lat: latitude, lng: longitude};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
 }
