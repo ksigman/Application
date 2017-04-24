@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Kyle Sigman Assn #5</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment5.css">
-	<script src="js/Assignment5.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment6.css">
+	<script src="js/Assignment6.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAzPngfOo3KLUCN-55xfzVgLo2xxBrHAU"></script>
 </head>
 <body>
@@ -20,7 +20,9 @@
 			<option value="section3">Order Edit</option>
 			<option value="section4">Customer Add</option>
 			<option value="section5">Geolocation</option>
-			<option value="section6">About</option>
+			<option value="section6">Camera</option>
+			<option value="section7">Contacts</option>
+			<option value="section8">About</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
@@ -81,6 +83,17 @@
 		<div id="map"></div>
 	</section>
 	<section id="section6" class="body-section-2">
+	<h2>Camera</h2>
+		<button onclick="takePhoto()">Take Photo</button><br>
+		<img id="photo_display" src="" />
+	</section>
+	<section id="section7" class="body-section-2">
+	<h2>Contacts</h2>
+		<button onclick="contactLookup()">Pick Contact</button><br><br>
+		<label>Name: </label><label id="contact_name"></label><br>
+		<label>Email: </label><label id="contact_email"></label>
+	</section>
+	<section id="section8" class="body-section-2">
 	<h2>About</h2>
 		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>
