@@ -1,7 +1,4 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(navigator.camera);
-}
+
 function sectionSelect(){
    var selectBox = document.getElementById("menu_select");
    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
