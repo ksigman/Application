@@ -272,6 +272,7 @@ function takePhoto(){
    navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype:destinationtype.FILE_URI, saveToPhotoAlbum: true });
 }
 function onSuccess(imageURI){
+   alert("Piture Taken");
    var picdisplay = document.getElementById("photo_display");
    pickdisplay.style.display = 'block';
    pickdisplay.src = imageURI;
