@@ -273,8 +273,8 @@ function takePhoto(){
 }
 function onSuccess(imageURI){
    var picdisplay = document.getElementById('photo_display');
-   pickdisplay.style.display = 'block';
-   pickdisplay.src = imageURI;
+   picdisplay.style.display = 'block';
+   picdisplay.src = imageURI;
 }
 function onFail(message){
    alert("Failed because: " + message);
