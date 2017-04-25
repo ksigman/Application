@@ -1,3 +1,7 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.camera);
+}
 function sectionSelect(){
    var selectBox = document.getElementById("menu_select");
    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -267,7 +271,9 @@ function showPosition(position){
           map: map
         });
 }
-
+function takePhoto(){
+   navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype:destinationtype.FILE_URI, saveToPhotoAlbum: true });
+}
 function onSuccess(imageURI){
    var picdisplay = document.getElementById("photo_display");
    pickdisplay.style.display = 'block';
