@@ -5,6 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="styles/Assignment6.css">
 	<script src="js/Assignment6.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAzPngfOo3KLUCN-55xfzVgLo2xxBrHAU"></script>
+	<script>
+		document.addEventListener("deviceready",onDeviceReady,false);
+		function onDeviceReady(){
+			picturesource = navigator.camera.PictureSourceType;
+			destinationtype = navigator.camera.DestinationType;
+			objContact = navigator.contacts.create();
+		}
+	</script>
 </head>
 <body>
 	<header>
