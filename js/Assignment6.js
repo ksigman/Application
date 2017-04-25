@@ -267,9 +267,7 @@ function showPosition(position){
           map: map
         });
 }
-function takePhoto(){
-   navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype:destinationtype.FILE_URI, saveToPhotoAlbum: true });
-}
+
 function onSuccess(imageURI){
    var picdisplay = document.getElementById("photo_display");
    pickdisplay.style.display = 'block';
