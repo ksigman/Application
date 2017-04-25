@@ -90,3 +90,6 @@ select{
 	height: 400px;
     width: 100%;
 }
+#photo_display{
+	max-width: 600px;
+}
