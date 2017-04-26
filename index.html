@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kyle Sigman Assn #5</title>
-	<link rel="stylesheet" type="text/css" href="styles/Assignment6.css">
-	<script src="js/Assignment6.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAzPngfOo3KLUCN-55xfzVgLo2xxBrHAU"></script>
+	<title>Kyle Sigman Assn #7</title>
+	<link rel="stylesheet" type="text/css" href="styles/Assignment7.css">
+	<script src="js/Assignment7.js"></script>
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAzPngfOo3KLUCN-55xfzVgLo2xxBrHAU"></script>
 	<script>
 		document.addEventListener("deviceready",onDeviceReady,false);
 		function onDeviceReady(){
@@ -31,7 +31,9 @@
 			<option value="section5">Geolocation</option>
 			<option value="section6">Camera</option>
 			<option value="section7">Contacts</option>
-			<option value="section8">About</option>
+			<option value="section8">Flashlight</option>
+			<option value="section9">In App Browser</option>
+			<option value="section10">About</option>
 			</select>
 	</div>
 	<section id="section1" class="body-section-1">
@@ -103,6 +105,14 @@
 		<label>Email: </label><label id="contact_email"></label>
 	</section>
 	<section id="section8" class="body-section-2">
+	<h2>Flashlight</h2>
+		<button onclick="flashlightToggle()">Toggle Flashlight</button>
+	</section>
+	<section id="section9" class="body-section-2">
+	<h2>In App Browser</h2>
+		<button onclick="browserOpen()">Open UAB Homepage</button>
+	</section>
+	<section id="section10" class="body-section-2">
 	<h2>About</h2>
 		<p>This aplication was built for UAB class IS 663 - Mobile Applications Using Adobe PhoneGap</p>
 	</section>
