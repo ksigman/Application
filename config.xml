@@ -5,9 +5,9 @@
  versionCode = "1"
  version = "0.1.0" >
  <!-- versionCode is optional and Android only -->
- <name> Assignment 6</name>
+ <name> Assignment 7</name>
  <description>
- Assignment 6
+ Assignment 7
  </description>
  <author>
  Kyle Sigman
@@ -20,6 +20,8 @@
  <plugin name="cordova-plugin-splashscreen" source="npm" />
  <plugin name="cordova-plugin-contacts" source="npm" />
  <plugin name="cordova-plugin-camera" source="npm" />
+ <plugin name="cordova-plugin-inappbrowser" source="npm" />
+ <gap:plugin name="cordova-plugin-flashlight" source="npm" />
  <icon src="icon.png" />
  <splash src="splash.png"/>
 </widget>
